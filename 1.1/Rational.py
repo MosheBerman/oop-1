@@ -11,8 +11,6 @@
 
 '''
 	This class represents a rational number. 
-
-	We use the GCD class to simplify simplifying fractions...
 '''
 
 
