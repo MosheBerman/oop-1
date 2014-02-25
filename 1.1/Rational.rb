@@ -23,22 +23,17 @@ class RationalNumber
 	#	Adds the supplied rational to the receiver - 
 	def add(rational)
 
-		if not rational.is_a?(Rational)
-			return nil
-		end
-
 		#	Copy the second rational
 		temp = RationalNumber.new(rational.numerator, rational.denominator)
 
 		#	Make sure we have LCD 
-		if is_a?(rational.denominator)
+		if not self.denominator == rational.denominator
 			temp.denominator = rational.denominator * self.denominator
 			temp.numerator = rational.numerator * self.denominator
 		end
 
 		#	Now add...
-		self.numerator += temp.numerator
-		self.denominator += temp.denominator
+		self.numerator = self.numerator + temp.numerator
 
 		return self
 	end
@@ -61,7 +56,6 @@ class RationalNumber
 
 		#	Now subtract...
 		self.numerator -= temp.numerator
-		self.denominator -= temp.denominator
 
 		return self
 	end

@@ -40,7 +40,6 @@ class Rational(object):
 
 		#	Now add...
 		self.numerator += temp.numerator
-		self.denominator += temp.denominator
 
 		return self
 
@@ -59,7 +58,6 @@ class Rational(object):
 
 		#	Now subtract...
 		self.numerator -= temp.numerator
-		self.denominator -= temp.denominator
 
 		return self
 
@@ -102,6 +100,7 @@ class Rational(object):
 		temp.denominator = temp.numerator
 		temp.numerator = tempVal
 
-		return self
+		#	Then multiply
+		return self.multiply(temp)
 
 
