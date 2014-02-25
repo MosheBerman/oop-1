@@ -9,10 +9,10 @@
 
 =end
 
-class Rational
+class RationalNumber
 
-	attr :numerator
-	attr :denominator
+	attr_accessor :numerator
+	attr_accessor :denominator
 
 	def initialize(numerator, denominator)
 		@numerator = numerator
@@ -24,11 +24,11 @@ class Rational
 	def add(rational)
 
 		if not rational.is_a?(Rational)
-			return None
+			return nil
 		end
 
 		#	Copy the second rational
-		temp = Rational(rational.numerator, rational.denominator)
+		temp = RationalNumber.new(rational.numerator, rational.denominator)
 
 		#	Make sure we have LCD 
 		if is_a?(rational.denominator)
@@ -47,11 +47,11 @@ class Rational
 	def subtract(rational)
 
 		if not rational.is_a?(Rational)
-			return None
+			return nil
 		end
 
 		#	Copy the second rational
-		temp = Rational(rational.numerator, rational.denominator)
+		temp = RationalNumber.new(rational.numerator, rational.denominator)
 
 		#	Make sure we have LCD 
 		if not self.denominator == rational.denominator
@@ -70,11 +70,11 @@ class Rational
 	def multiply(rational)
 
 		if not rational.is_a?(Rational)
-			return None
+			return nil
 		end
 
 		#	Copy the second rational
-		temp = Rational(rational.numerator, rational.denominator)
+		temp = RationalNumber.new(rational.numerator, rational.denominator)
 
 		#	Make sure we have LCD
 		if not self.denominator == rational.denominator
@@ -93,11 +93,11 @@ class Rational
 	def divide(rational)
 
 		if not rational.is_a?(Rational)
-			return None
+			return nil
 		end
 
 		#	Copy the second rational
-		temp = Rational(rational.denominator, rational.denominator)
+		temp = RationalNumber.new(rational.denominator, rational.denominator)
 
 		#	Make sure we have LCD
 		if not self.denominator == rational.denominator
@@ -115,9 +115,9 @@ class Rational
 	end
 end
 
-r  = Rational.new(4,5)
-r2 = Rational.new(1,5)
+
+r  = RationalNumber.new(4,5)
+r2 = RationalNumber.new(1,5)
 r3 = r.add(r2)
 
-puts r3.numerator
-puts r3.denominator
+puts r.numerator.to_s
