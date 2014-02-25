@@ -116,8 +116,13 @@ class RationalNumber
 end
 
 
+
 r  = RationalNumber.new(4,5)
 r2 = RationalNumber.new(1,5)
-r3 = r.add(r2)
 
-puts r.numerator.to_s
+puts r.numerator.to_s + "/" + r.denominator.to_s
+puts r2.numerator.to_s + "/" + r2.denominator.to_s
+
+r.add(r2)
+
+puts r.numerator.to_s + "/" + r.denominator.to_s
